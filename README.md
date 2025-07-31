@@ -1,200 +1,195 @@
 # Code Reel Recorder
 
-A beautiful, terminal-style web application for creating code reels with typing animations and highlighting effects. Perfect for recording programming tutorials, code demonstrations, and educational content.
+A modern, React-based web application designed for creating and recording code demonstrations with streaming animations and custom highlighting effects.
 
 ## ✨ Features
 
-### 🎨 Terminal/IDE Interface
-- **Dark Mode Design**: Professional dark theme resembling popular IDEs
-- **VS Code-like Font**: JetBrains Mono for optimal code readability
-- **macOS-style Controls**: Red, yellow, and green dots in the header
-- **Syntax Highlighting**: Powered by CodeMirror with multiple themes
-- **Responsive Design**: Works perfectly on all screen sizes
+### 🎬 **Streaming Code Animation**
+- **Character-by-character typing effect** - Code appears as if being typed in real-time
+- **Smooth animations** - Optimized for 60fps performance with hardware acceleration
+- **Customizable speed** - Adjustable typing speed for different recording needs
 
-### 📝 Code Input & Preview
-- **Advanced Code Editor**: CodeMirror integration with syntax highlighting
-- **Real-time Preview**: See your code as it types out
-- **Typing Animation**: Character-by-character typing effect
-- **Play Controls**: Start, stop, and reset preview functionality
+### 🎨 **Custom Highlighting & Emphasis**
+- **Dynamic highlighting** - Wrap code in `[[highlight]]...[[/highlight]]` for background highlighting
+- **Bold emphasis** - Use `[[bold]]...[[/bold]]` for bold text effects
+- **Customizable colors** - Color picker to change highlight colors in real-time
+- **Syntax highlighting** - Automatic highlighting for JavaScript keywords, strings, numbers, and comments
 
-### 🎯 Highlighting & Emphasis
-- **Custom Highlighting**: Wrap code in `[[highlight]]...[[/highlight]]` for background highlighting
-- **Bold Emphasis**: Use `[[bold]]...[[/bold]]` for text emphasis
-- **Animated Effects**: Smooth fade-in animations for highlights and emphasis
-- **Visual Feedback**: Clear visual distinction for emphasized code
+### 🌙 **Theme Support**
+- **Dark/Light Mode** - Toggle between dark and light themes
+- **VS Code-like appearance** - Professional IDE styling with JetBrains Mono font
+- **Consistent theming** - All components adapt to theme changes
 
-### 🎮 Interactive Controls
-- **Play Button**: Start the typing animation
-- **Reset Button**: Clear the preview
-- **Toggle Input**: Hide/show the code input area for clean recordings
-- **Download Code**: Save your code snippets as files
-- **Theme Switcher**: Cycle between different color themes
+### 💻 **Code Editor Features**
+- **CodeMirror integration** - Full-featured code editor with syntax highlighting
+- **Line numbers** - Professional editor layout with numbered lines
+- **Scrollable content** - Handle large code files with proper scrolling
+- **Download functionality** - Save code snippets as text files
 
-### ⌨️ Keyboard Shortcuts
-- `Ctrl+Enter`: Play preview
-- `Ctrl+R`: Reset preview
-- `Ctrl+H`: Toggle input visibility
-- `Ctrl+S`: Download code
+### 🎯 **Recording-Ready Interface**
+- **Clean UI** - Minimal interface perfect for screen recording
+- **Hide input option** - Toggle code input visibility for clean preview-only recordings
+- **Responsive design** - Works across different screen sizes
+- **Full-screen support** - Optimized for large displays and recording
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- No server required - runs entirely in the browser
+- Node.js (v14 or higher)
+- npm or yarn
 
 ### Installation
-1. Download all files to a directory
-2. Open `index.html` in your web browser
-3. Start creating code reels!
 
-### File Structure
-```
-CodeReelRecorder/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and themes
-├── script.js           # JavaScript functionality
-└── README.md          # This documentation
-```
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd code-reel-recorder
+   ```
 
-## 📖 Usage Guide
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### Basic Usage
-1. **Write Code**: Use the code editor on the left to write your code
-2. **Add Highlights**: Wrap important parts in `[[highlight]]...[[/highlight]]`
-3. **Add Emphasis**: Use `[[bold]]...[[/bold]]` for bold text
-4. **Play Preview**: Click the Play button to see the typing animation
-5. **Record**: Use screen recording software to capture the preview
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-### Advanced Features
+4. **Open your browser**
+   Navigate to `http://localhost:3000`
 
-#### Custom Highlighting
+## 📖 Usage
+
+### Basic Workflow
+
+1. **Write your code** in the Code Input section
+2. **Add highlighting** using `[[highlight]]your code[[/highlight]]`
+3. **Add emphasis** using `[[bold]]your code[[/bold]]`
+4. **Click Play** to see the streaming animation
+5. **Record your screen** while the code types out
+
+### Highlighting Examples
+
 ```javascript
-function [[highlight]]calculateSum[[/highlight]](a, b) {
-    return [[bold]]a + b[[/bold]];
+// Basic highlighting
+function [[highlight]]calculateFibonacci[[/highlight]](n) {
+    if (n <= 1) return n;
+    
+    let [[bold]]prev = 0[[/bold]];
+    let [[bold]]current = 1[[/bold]];
+    
+    for (let i = 2; i <= n; i++) {
+        const next = prev + current;
+        prev = current;
+        current = next;
+    }
+    
+    return current;
 }
+
+// Example usage
+const [[highlight]]result[[/highlight]] = calculateFibonacci(10);
+console.log(`Fibonacci(10) = ${result}`);
 ```
 
-#### Multiple Highlights
-```javascript
-// You can use multiple highlights in the same code
-const [[highlight]]result[[/highlight]] = [[bold]]calculateSum[[/bold]](5, 10);
-console.log([[highlight]]result[[/highlight]]);
-```
+### Customization
 
-#### Theme Switching
-- Click the theme toggle button in the header
-- Cycles through Dracula, Monokai, and One Dark themes
+- **Change highlight color** - Use the color picker in the header
+- **Toggle theme** - Click the sun/moon icon to switch between dark and light modes
+- **Hide input** - Use the eye icon to show only the preview for clean recordings
+- **Download code** - Use the download icon to save your code snippet
 
-#### Clean Recording Mode
-- Click the eye icon to hide the code input area
-- Perfect for clean screen recordings without the editor visible
+## 🛠️ Technical Details
 
-## 🎨 Customization
+### Built With
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type-safe development
+- **CodeMirror 6** - Professional code editor
+- **CSS3** - Custom styling with theme support
 
-### Changing Typing Speed
-```javascript
-// Access the global instance
-window.codeReelRecorder.setTypingSpeed(30); // Faster
-window.codeReelRecorder.setTypingSpeed(100); // Slower
-```
+### Key Components
+- `CodeReelRecorder.tsx` - Main application component
+- `CodeReelRecorder.css` - Styling with theme support
+- Custom animation system using React hooks and `useEffect`
 
-### Adding Custom Themes
-1. Add new theme CSS to `styles.css`
-2. Update the theme array in `script.js`
-3. The theme toggle will automatically include your new theme
+### Animation System
+The streaming animation uses a state-driven approach:
+- **Character processing** - Converts `[[highlight]]` and `[[bold]]` tags to HTML
+- **State management** - Uses `currentIndex` to track animation progress
+- **useEffect timer** - Smooth timing with `setTimeout` and cleanup
+- **Hardware acceleration** - CSS transforms for optimal performance
 
-### Custom Highlight Colors
-Modify the CSS variables in `styles.css`:
-```css
-.highlight {
-    background: #your-color-here;
-}
-```
-
-## 🔧 Technical Details
-
-### Technologies Used
-- **HTML5**: Semantic structure
-- **CSS3**: Modern styling with animations
-- **JavaScript ES6+**: Modern JavaScript with classes and async/await
-- **CodeMirror**: Advanced code editor
-- **Google Fonts**: JetBrains Mono for optimal code display
-
-### Browser Compatibility
-- Chrome 80+
-- Firefox 75+
-- Safari 13+
-- Edge 80+
-
-### Performance
-- Optimized for smooth 60fps animations
-- Efficient typing algorithm
-- Minimal memory footprint
-- No external dependencies except CDN libraries
-
-## 🎬 Recording Tips
+## 🎥 Recording Tips
 
 ### For Best Results
-1. **Use Full Screen**: Maximize your browser for clean recordings
-2. **Hide Input**: Toggle the input area off for distraction-free previews
-3. **Plan Your Highlights**: Mark important code sections before recording
-4. **Test Timing**: Practice the typing speed for your content
-5. **Use Keyboard Shortcuts**: Faster workflow during recording
+1. **Use a dark theme** - Better contrast for recordings
+2. **Hide the input** - Clean preview-only view for final recordings
+3. **Choose highlight colors** - Use colors that work well with your recording software
+4. **Full-screen mode** - Maximize browser window for clean recordings
+5. **Test your setup** - Record a short test to check audio and video quality
 
 ### Recommended Settings
-- **Typing Speed**: 50ms per character (default)
-- **Theme**: Dracula (best contrast for recordings)
-- **Font Size**: 14px (optimal for most screen sizes)
+- **Resolution**: 1920x1080 or higher
+- **Frame rate**: 30fps or 60fps
+- **Codec**: H.264 for compatibility
+- **Audio**: Clear microphone with noise reduction
 
-## 🐛 Troubleshooting
+## 🔧 Development
 
-### Common Issues
+### Project Structure
+```
+code-reel-recorder/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── CodeReelRecorder.tsx
+│   │   └── CodeReelRecorder.css
+│   ├── App.tsx
+│   ├── App.css
+│   └── index.tsx
+├── package.json
+└── README.md
+```
 
-**CodeMirror not loading**
-- Check internet connection (CDN required)
-- Try refreshing the page
-- Ensure JavaScript is enabled
+### Available Scripts
+- `npm start` - Start development server
+- `npm build` - Build for production
+- `npm test` - Run tests
+- `npm eject` - Eject from Create React App
 
-**Typing animation too fast/slow**
-- Use `window.codeReelRecorder.setTypingSpeed(ms)` to adjust
-
-**Highlights not showing**
-- Ensure proper tag format: `[[highlight]]text[[/highlight]]`
-- Check for typos in tag names
-
-**Download not working**
-- Ensure browser allows downloads
-- Check if any security software is blocking downloads
+### Customization
+- **Add new themes** - Modify the theme objects in `CodeReelRecorder.tsx`
+- **Change fonts** - Update font imports in CSS files
+- **Add languages** - Install additional CodeMirror language packages
+- **Modify animations** - Adjust timing in the `useEffect` animation logic
 
 ## 🤝 Contributing
 
-This is a standalone application, but suggestions and improvements are welcome!
-
-### Development
 1. Fork the repository
-2. Make your changes
-3. Test thoroughly
-4. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Feature Requests
-- Add more themes
-- Support for different programming languages
-- Export to different formats
-- Custom animation effects
+## 📝 License
 
-## 📄 License
-
-This project is open source and available under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- **CodeMirror**: For the excellent code editor
-- **JetBrains**: For the JetBrains Mono font
-- **VS Code**: For design inspiration
-- **Dracula Theme**: For the beautiful color scheme
+- **CodeMirror** - For the excellent code editor
+- **JetBrains Mono** - For the beautiful programming font
+- **React Team** - For the amazing framework
+- **VS Code** - For inspiration on the IDE-like interface
+
+## 📞 Support
+
+If you have any questions or need help:
+- Open an issue on GitHub
+- Check the documentation
+- Review the code examples
 
 ---
 
-**Happy Coding! 🚀**
-
-Create amazing code reels and share your knowledge with the world! 
+**Happy coding and recording!** 🎬✨
