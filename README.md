@@ -2,37 +2,37 @@
 
 A modern, React-based web application designed for creating and recording code demonstrations with streaming animations and custom highlighting effects.
 
-## ✨ Features
+##  Features
 
-### 🎬 **Streaming Code Animation**
+###  **Streaming Code Animation**
 - **Character-by-character typing effect** - Code appears as if being typed in real-time
 - **Smooth animations** - Optimized for 60fps performance with hardware acceleration
 - **Customizable speed** - Adjustable typing speed for different recording needs
 
-### 🎨 **Custom Highlighting & Emphasis**
+###  **Custom Highlighting & Emphasis**
 - **Dynamic highlighting** - Wrap code in `[[highlight]]...[[/highlight]]` for background highlighting
 - **Bold emphasis** - Use `[[bold]]...[[/bold]]` for bold text effects
 - **Customizable colors** - Color picker to change highlight colors in real-time
 - **Syntax highlighting** - Automatic highlighting for JavaScript keywords, strings, numbers, and comments
 
-### 🌙 **Theme Support**
+###  **Theme Support**
 - **Dark/Light Mode** - Toggle between dark and light themes
 - **VS Code-like appearance** - Professional IDE styling with JetBrains Mono font
 - **Consistent theming** - All components adapt to theme changes
 
-### 💻 **Code Editor Features**
+###  **Code Editor Features**
 - **CodeMirror integration** - Full-featured code editor with syntax highlighting
 - **Line numbers** - Professional editor layout with numbered lines
 - **Scrollable content** - Handle large code files with proper scrolling
 - **Download functionality** - Save code snippets as text files
 
-### 🎯 **Recording-Ready Interface**
+###  **Recording-Ready Interface**
 - **Clean UI** - Minimal interface perfect for screen recording
 - **Hide input option** - Toggle code input visibility for clean preview-only recordings
 - **Responsive design** - Works across different screen sizes
 - **Full-screen support** - Optimized for large displays and recording
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -59,7 +59,7 @@ A modern, React-based web application designed for creating and recording code d
 4. **Open your browser**
    Navigate to `http://localhost:3000`
 
-## 📖 Usage
+## Usage
 
 ### Basic Workflow
 
@@ -100,7 +100,7 @@ console.log(`Fibonacci(10) = ${result}`);
 - **Hide input** - Use the eye icon to show only the preview for clean recordings
 - **Download code** - Use the download icon to save your code snippet
 
-## 🛠️ Technical Details
+##  Technical Details
 
 ### Built With
 - **React 18** - Modern React with hooks
@@ -120,7 +120,7 @@ The streaming animation uses a state-driven approach:
 - **useEffect timer** - Smooth timing with `setTimeout` and cleanup
 - **Hardware acceleration** - CSS transforms for optimal performance
 
-## 🎥 Recording Tips
+##  Recording Tips
 
 ### For Best Results
 1. **Use a dark theme** - Better contrast for recordings
@@ -135,7 +135,7 @@ The streaming animation uses a state-driven approach:
 - **Codec**: H.264 for compatibility
 - **Audio**: Clear microphone with noise reduction
 
-## 🔧 Development
+##  Development
 
 ### Project Structure
 ```
@@ -164,7 +164,7 @@ code-reel-recorder/
 - **Add languages** - Install additional CodeMirror language packages
 - **Modify animations** - Adjust timing in the `useEffect` animation logic
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -176,14 +176,14 @@ code-reel-recorder/
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **CodeMirror** - For the excellent code editor
 - **JetBrains Mono** - For the beautiful programming font
 - **React Team** - For the amazing framework
 - **VS Code** - For inspiration on the IDE-like interface
 
-## 📞 Support
+##  Support
 
 If you have any questions or need help:
 - Open an issue on GitHub
@@ -192,4 +192,4 @@ If you have any questions or need help:
 
 ---
 
-**Happy coding and recording!** 🎬✨
+**Happy coding and recording!** ✨
